@@ -11,9 +11,15 @@ class Utils {
  **/
 enum Units { METRIC, IMPERIAL }
 
-enum FieldType { email, password, normal, date, phone, underLine, number }
-
-enum ButtonType { flat, rounded, text, outlined, toggle, iconArrow }
-
-enum AuthAction { done, doneLogout, doneDelete, editProfile, forgotPassword}
-
+extension WeatherUnits on Units {
+  String get unit {
+    switch (this) {
+      case Units.METRIC:
+        return 'metric';
+      case Units.IMPERIAL:
+        return 'imperial';
+      default:
+        return 'metric';
+    }
+  }
+}

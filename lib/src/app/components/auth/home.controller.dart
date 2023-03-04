@@ -33,7 +33,7 @@ class HomeController extends MomentumController<HomeModel>{
 
   updateWeather({ Units? units}) {
     getCurrentWeather();
-    model.update(timeParametersEntity: TimeParametersEntity(lat: model.timeParametersEntity!.lat, lon: model.timeParametersEntity!.lon, units: units == Units.IMPERIAL ? 'imperial' : units == Units.METRIC ? 'metric' : 'metric'  ));
+    model.update(timeParametersEntity: TimeParametersEntity(lat: model.timeParametersEntity!.lat, lon: model.timeParametersEntity!.lon, units: units?.name));
   }
 
   _determinePosition() async {
